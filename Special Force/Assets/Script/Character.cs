@@ -16,18 +16,17 @@ public class Character : MonoBehaviour
     [SerializeField] Vector2 direction;
     [SerializeField] Material flashmaterial;
 
+    private WaitForSeconds waitForSeconds = new WaitForSeconds(0.125f);
+
     float exitTime = 0.1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        originMatherial = spriteRenderer.material;
-
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        colutin();
+        originMatherial = spriteRenderer.material;
     }
 
     // Update is called once per frame
@@ -35,6 +34,11 @@ public class Character : MonoBehaviour
     {
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
+        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(Flash());
+        }
     }
 
     public void Action()
@@ -87,10 +91,12 @@ public class Character : MonoBehaviour
     // 코루틴 함수 flash
     // 재질 정보를 flash Matrial로 교체.
     // 대기 0.125f 후에 원상태로 돌아가기.
-    IEnumerator colutin()
+    IEnumerator Flash()
     {
-        gameObject.GetComponent<MeshRenderer>().material = flashmaterial;
-        yield return new WaitForSeconds(0.125f);
-        gameObject.GetComponent<MeshRenderer>().material = originMatherial;
+        spriteRenderer.material = flashmaterial;
+
+        yield return waitForSeconds;
+
+        spriteRenderer.material = originMatherial;
     }
 }
