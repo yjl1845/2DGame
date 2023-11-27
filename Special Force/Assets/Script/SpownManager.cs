@@ -17,8 +17,11 @@ public class SpownManager : MonoBehaviour
 
     public IEnumerator Spawn()
     {
-        yield return waitForSeconds;
+        while (true)
+        {
+            yield return waitForSeconds;
 
-        Instantiate(enemy, spawnposition[Random.Range(0, spawnposition.Length)]);
+            Instantiate(enemy, spawnposition[Random.Range(0, spawnposition.Length)]);
+        }
     }
 }
