@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class SpownManager : MonoBehaviour
 {
-    [SerializeField] Transform[] spawnposition;
-
     private readonly WaitForSeconds waitForSeconds = new WaitForSeconds(3);
 
+    [SerializeField] int rand;
+    [SerializeField] List<Monster> monsterList;
+    [SerializeField] Factory factory;
     [SerializeField] Monster enemy;
 
     public void Start()
     {
+        monsterList.Capacity = 10;
+
         StartCoroutine(Spawn());
     }
 
@@ -21,7 +24,9 @@ public class SpownManager : MonoBehaviour
         {
             yield return waitForSeconds;
 
-            Instantiate(enemy, spawnposition[Random.Range(0, spawnposition.Length)]);
+            rand = Random.Range(0, monsterList.Count);
+
+            Monster unit = factory.CreateUnit(monsterList[rand]);
         }
     }
 }

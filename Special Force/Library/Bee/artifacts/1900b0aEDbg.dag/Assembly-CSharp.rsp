@@ -372,8 +372,12 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/Character.cs"
 "Assets/Script/Crab.cs"
+"Assets/Script/CrabSerch.cs"
+"Assets/Script/Factory.cs"
 "Assets/Script/FollowCarmera.cs"
+"Assets/Script/Golem.cs"
 "Assets/Script/Monster.cs"
+"Assets/Script/Pebble.cs"
 "Assets/Script/SpownManager.cs"
 "Assets/Script/TimeManager.cs"
 -langversion:9.0

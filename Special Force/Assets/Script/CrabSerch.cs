@@ -44,8 +44,7 @@ public class CrabSerch : MonoBehaviour
             {
                 left = pivot + 1;
             }
-
-            Debug.Log("값을 찾지 못했습니다.");
         }
+        Debug.Log("값을 찾지 못했습니다.");
     }
 }

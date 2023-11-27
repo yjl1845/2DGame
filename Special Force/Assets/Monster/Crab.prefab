@@ -142,6 +142,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   speed: 100
   CharacterPosition: {fileID: 6818800487523861338, guid: 1816a403bb9ee0d418372ee52f168a0a, type: 3}
+  attack: 0
 --- !u!50 &3851397540605352702
 Rigidbody2D:
   serializedVersion: 4
@@ -208,6 +209,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1974896, y: -1.0626824}
+  m_Offset: {x: -0.18643218, y: -1.0626824}
   serializedVersion: 2
-  m_Radius: 0.5188086
+  m_Radius: 0.3160908

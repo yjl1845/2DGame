@@ -22,6 +22,7 @@ public abstract class Monster : MonoBehaviour
     [SerializeField] Vector2 direction;
     [SerializeField] protected float speed = 100f;
     [SerializeField] Transform CharacterPosition;
+    [SerializeField] protected float attack;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -51,6 +52,11 @@ public abstract class Monster : MonoBehaviour
             case STATE DIE: Death();
                 break;
         }
+    }
+
+    public void Damage()
+    {
+        CharacterPosition.GetComponent<Character>().OnHit(attack);
     }
 
     protected abstract void Attack();
