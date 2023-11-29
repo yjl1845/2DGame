@@ -120,7 +120,7 @@ public class Character : MonoBehaviour
 
         if (health < 0)
         {
-            Debug.Log("Ã¼·Â±ðÀÓ");
+            animator.Play("Death");
         }
     }
 }

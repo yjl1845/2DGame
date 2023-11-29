@@ -8,6 +8,7 @@ public class Pebble : Monster
     {
         speed = 0;
         attack = 3f;
+        health = 20;
 
         animator.SetBool("Attack", true);
     }

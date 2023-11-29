@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public enum STATE
 {
     WALK,
     ATTACK,
+    HIT,
     DIE
 }
 
@@ -20,9 +22,12 @@ public abstract class Monster : MonoBehaviour
 
     [SerializeField] STATE state;
     [SerializeField] Vector2 direction;
-    [SerializeField] protected float speed = 100f;
     [SerializeField] Transform CharacterPosition;
+
+    [SerializeField] protected float speed = 100f;
     [SerializeField] protected float attack;
+    [SerializeField] protected float health;
+    [SerializeField] private float power = 10;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -49,6 +54,8 @@ public abstract class Monster : MonoBehaviour
                 break;
             case STATE.ATTACK: Attack();
                 break;
+            case STATE.HIT:
+                break;
             case STATE DIE: Death();
                 break;
         }
@@ -62,6 +69,19 @@ public abstract class Monster : MonoBehaviour
     protected abstract void Attack();
 
     protected abstract void Death();
+
+    public IEnumerator OnHit(float Damage)
+    {
+        state = STATE.HIT;
+
+        rigidbody2D.velocity = Vector2.zero;
+
+        rigidbody2D.AddForce(-direction * power, ForceMode2D.Force);
+
+        yield return new WaitForSeconds(1);
+
+        state = STATE.WALK;
+    }
 
     protected void Move()
     {

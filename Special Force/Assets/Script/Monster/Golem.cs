@@ -8,6 +8,7 @@ public class Golem : Monster
     {
         speed = 0;
         attack = 20f;
+        health = 100;
 
         animator.SetBool("Attack", true);
     }

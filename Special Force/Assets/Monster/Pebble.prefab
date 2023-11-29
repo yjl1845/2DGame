@@ -102,9 +102,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01635158, y: 0.23248076}
+  m_Offset: {x: 0.018395483, y: 0.23248076}
   serializedVersion: 2
-  m_Radius: 0.5179075
+  m_Radius: 0.5812698
 --- !u!50 &6185571957664372290
 Rigidbody2D:
   serializedVersion: 4
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -140,9 +140,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   direction: {x: 0, y: 0}
-  speed: 100
   CharacterPosition: {fileID: 0}
+  speed: 100
   attack: 0
+  health: 0
+  power: 10
 --- !u!95 &7140078389635931875
 Animator:
   serializedVersion: 5
