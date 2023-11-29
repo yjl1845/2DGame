@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 6180148953911850715, guid: 5a72bf6a4f4357a4cb5405aaf6cdf3df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07124138, y: -0.0720734}
+  m_Offset: {x: 0.5579301, y: -0.23471642}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8732417, y: 2.652503}
+  m_Size: {x: 1.6148989, y: 1.0603142}
   m_EdgeRadius: 0
 --- !u!50 &1054339425133344257
 Rigidbody2D:
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4229021774762855052}
   - component: {fileID: 5851457855825303743}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: coilder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
