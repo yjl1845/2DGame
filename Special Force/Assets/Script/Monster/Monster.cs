@@ -29,6 +29,8 @@ public abstract class Monster : MonoBehaviour
     [SerializeField] protected float health;
     [SerializeField] private float power = 10;
 
+    [SerializeField] Sound sound = new Sound();
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -76,9 +78,11 @@ public abstract class Monster : MonoBehaviour
 
         rigidbody2D.velocity = Vector2.zero;
 
+        AudioManager.instance.Sound(sound.audioClip[0]);
+
         rigidbody2D.AddForce(-direction * power, ForceMode2D.Force);
 
-        yield return new WaitForSeconds(1);
+        yield return Corutincash.waitForSeconds(1);
 
         state = STATE.WALK;
     }

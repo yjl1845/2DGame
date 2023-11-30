@@ -140,9 +140,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   direction: {x: 0, y: 0}
-  speed: 100
   CharacterPosition: {fileID: 6818800487523861338, guid: 1816a403bb9ee0d418372ee52f168a0a, type: 3}
+  speed: 100
   attack: 0
+  health: 0
+  power: 10
+  sound:
+    audioClip:
+    - {fileID: 8300000, guid: 26b4ccc679daa3847ab1853c1a1ffa15, type: 3}
 --- !u!50 &3851397540605352702
 Rigidbody2D:
   serializedVersion: 4

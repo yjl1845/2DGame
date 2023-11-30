@@ -22,7 +22,7 @@ public class SpownManager : MonoBehaviour
     {
         while (true)
         {
-            yield return waitForSeconds;
+            yield return Corutincash.waitForSeconds(5);
 
             rand = Random.Range(0, monsterList.Count);
 

@@ -145,6 +145,9 @@ MonoBehaviour:
   attack: 0
   health: 0
   power: 10
+  sound:
+    audioClip:
+    - {fileID: 8300000, guid: 51e9205cbfc5f7440b8f731ecccf0dfc, type: 3}
 --- !u!95 &7140078389635931875
 Animator:
   serializedVersion: 5

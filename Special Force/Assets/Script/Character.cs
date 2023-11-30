@@ -21,10 +21,6 @@ public class Character : MonoBehaviour
     [SerializeField] Material flashmaterial;
     [SerializeField] List<Weapon> weaponList;
 
-    private WaitForSeconds waitForSeconds = new WaitForSeconds(0.125f);
-
-    float exitTime = 0.1f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -93,7 +89,7 @@ public class Character : MonoBehaviour
     {
         spriteRenderer.material = flashmaterial;
 
-        yield return waitForSeconds;
+        yield return Corutincash.waitForSeconds(0.125f);
 
         spriteRenderer.material = originMatherial;
     }
