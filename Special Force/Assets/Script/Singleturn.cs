@@ -11,7 +11,7 @@ public class Singleturn<T> : MonoBehaviour where T : MonoBehaviour
         set;
     }
 
-    public void Awake()
+    protected void Awake()
     {
         if(instance == null)
         {

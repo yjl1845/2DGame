@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class Golem : Monster
 {
+    public void Start()
+    {
+        base.Start();
+        health = 100;
+    }
+
     protected override void Attack()
     {
-        speed = 0;
         attack = 20f;
-        health = 100;
 
         animator.SetBool("Attack", true);
     }
 
     protected override void Death()
     {
-        Debug.Log("Death");
+        animator.Play(typeof(Golem) + " " + "Die");
     }
 }

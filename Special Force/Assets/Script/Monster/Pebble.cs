@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Pebble : Monster
 {
+    public void Start()
+    {
+        base.Start();
+        health = 20;
+    }
+
     protected override void Attack()
     {
-        speed = 0;
         attack = 3f;
-        health = 20;
 
         animator.SetBool("Attack", true);
     }
 
     protected override void Death()
     {
-        Debug.Log("Death");
+
+        animator.Play(typeof(Pebble) + " " + "Die");
     }
 }

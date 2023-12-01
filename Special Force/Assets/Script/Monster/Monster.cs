@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -15,7 +13,6 @@ public enum STATE
 
 public abstract class Monster : MonoBehaviour
 {
-    private float initSpeed;
     private Rigidbody2D rigidbody2D;
     private SpriteRenderer spriteRenderer;
     private protected Animator animator;
@@ -34,8 +31,6 @@ public abstract class Monster : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        initSpeed = speed;
-
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -78,19 +73,30 @@ public abstract class Monster : MonoBehaviour
 
         rigidbody2D.velocity = Vector2.zero;
 
+        health -= Damage;
+        
         AudioManager.instance.Sound(sound.audioClip[0]);
+
+        if(health <= 0)
+        {
+            state = STATE.DIE;
+            yield break;
+        }
 
         rigidbody2D.AddForce(-direction * power, ForceMode2D.Force);
 
-        yield return Corutincash.waitForSeconds(1);
+        yield return Corutincash.waitForSeconds(0.25f);
 
         state = STATE.WALK;
     }
 
+    public void Release()
+    {
+        Destroy(gameObject);
+    }
+
     protected void Move()
     {
-        speed = initSpeed;
-
         animator.SetBool("Attack", false);
 
         rigidbody2D.velocity = direction.normalized * speed * Time.fixedDeltaTime;
@@ -125,7 +131,10 @@ public abstract class Monster : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            state = STATE.WALK;
+            if(state != STATE.DIE)
+            {
+                state = STATE.WALK;
+            }
         }
     }
 }
