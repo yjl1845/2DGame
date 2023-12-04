@@ -379,6 +379,7 @@
 "Assets/Script/Manager/Main.cs"
 "Assets/Script/Manager/SpownManager.cs"
 "Assets/Script/Manager/TimeManager.cs"
+"Assets/Script/Memory.cs"
 "Assets/Script/Monster/Crab.cs"
 "Assets/Script/Monster/CrabSerch.cs"
 "Assets/Script/Monster/FollowCarmera.cs"
